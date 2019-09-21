@@ -46,18 +46,10 @@ extension IDTokenVerifier {
             return IDTokenVerificationError.invalidIDTokenFormat(message: "Expected a JSON a header, got \(header).")
         }
 
-        guard let type = json["typ"] as? String else {
-            return IDTokenVerificationError.missingRequiredParam(param: "typ", message: "Missing \"typ\" at header, got \(header).")
-        }
-
         guard let alg = json["alg"] as? String else {
             return IDTokenVerificationError.missingRequiredParam(param: "alg", message: "Missing \"alg\" at header, got \(header).")
         }
 
-        guard type == "JWT" else {
-            return IDTokenVerificationError.incorrectTokenType(expected: "JWT", got: "\(type)")
-        }
-        
         guard alg == algorithm.name else {
             return IDTokenVerificationError.incorrectAlgorithm(expected: "\(algorithm.name)", got: "\(alg)")
         }
