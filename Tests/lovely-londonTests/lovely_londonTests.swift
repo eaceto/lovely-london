@@ -5,29 +5,30 @@ final class lovely_londonTests: XCTestCase {
         
     func testWrongTokenFormat() {
         let algorithm = SignatureAlgorithm.RS256(publicKey: publicKey)
+        let verifier = IDTokenVerifier().set(signatureAlgorithm: algorithm)
         
-        IDTokenVerifier.verify(idToken: "",
-                               using: SignatureVerificator(with: algorithm),
-                               onSucess: { token in XCTFail() },
-                               onError: { error in
-                                if case IDTokenVerificationError.invalidIDTokenFormat = error {
-                                    return
-                                }
-                                XCTFail()
+        verifier.verify(idToken: "",
+                        onSucess: { token in XCTFail() },
+                        onError: { error in
+                            if case IDTokenVerificationError.invalidIDTokenFormat = error {
+                                return
+                                
+                            }
+                            XCTFail()
         })
     }
     
     func testWrongAlgorithm() {
-        let algorithm = SignatureAlgorithm.RS512(publicKey: publicKey)
-        
-        IDTokenVerifier.verify(idToken: wrongAlgorithmJWT,
-                               using: SignatureVerificator(with: algorithm),
-                               onSucess: { token in XCTFail() },
-                               onError: { error in
-                                if case IDTokenVerificationError.incorrectAlgorithm = error {
-                                    return
-                                }
-                                XCTFail()
+        let algorithm = SignatureAlgorithm.RS256(publicKey: publicKey)
+        let verifier = IDTokenVerifier().set(signatureAlgorithm: algorithm)
+                
+        verifier.verify(idToken: wrongAlgorithmJWT,
+                        onSucess: { token in XCTFail() },
+                        onError: { error in
+                            if case IDTokenVerificationError.incorrectAlgorithm = error {
+                                return
+                            }
+                            XCTFail()
         })
     }
     

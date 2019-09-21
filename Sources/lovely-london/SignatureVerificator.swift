@@ -11,6 +11,8 @@ import Foundation
 
 public class SignatureVerificator {
     
+    public static let none = SignatureVerificator(with: .none)
+    
     private(set) var algorithm: SignatureAlgorithm
     
     init(with algorithm: SignatureAlgorithm) {
