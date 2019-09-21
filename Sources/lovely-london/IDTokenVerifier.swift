@@ -9,8 +9,14 @@ import Foundation
 
 public class IDTokenVerifier {
 
-    public static func verify(idToken: String,
-                              using signatureVerificator: SignatureVerificator,
+    private(set) var signatureVerificator = SignatureVerificator.none
+    
+    public func set(signatureAlgorithm: SignatureAlgorithm) -> IDTokenVerifier {
+        signatureVerificator = SignatureVerificator(with: signatureAlgorithm)
+        return self
+    }
+    
+    public func verify(idToken: String,
                               onSucess: ((IDToken)->Void)?,
                               onError: ((Error)->Void)?) {
         
@@ -28,12 +34,11 @@ public class IDTokenVerifier {
             return
         }
 
-        if let headerError = IDTokenVerifier.validate(header: header, with: signatureVerificator.algorithm) {
+        if let headerError = validate(header: header) {
             onError?(headerError)
             return
         }
-        
-        
+                
         onError?(IDTokenVerificationError.unknownError(idToken: idToken, signatureVerificator: signatureVerificator))
     }
 }
@@ -41,17 +46,21 @@ public class IDTokenVerifier {
 // Header Verification
 extension IDTokenVerifier {
         
-    internal static func validate(header: String, with algorithm: SignatureAlgorithm) -> Error? {
+    func validate(header: String) -> Error? {
         guard let json = header.asJSONObject() else {
             return IDTokenVerificationError.invalidIDTokenFormat(message: "Expected a JSON a header, got \(header).")
         }
 
+        if case SignatureAlgorithm.none = signatureVerificator.algorithm {
+            return nil
+        }
+        
         guard let alg = json["alg"] as? String else {
             return IDTokenVerificationError.missingRequiredParam(param: "alg", message: "Missing \"alg\" at header, got \(header).")
         }
 
-        guard alg == algorithm.name else {
-            return IDTokenVerificationError.incorrectAlgorithm(expected: "\(algorithm.name)", got: "\(alg)")
+        guard alg == signatureVerificator.algorithm.name else {
+            return IDTokenVerificationError.incorrectAlgorithm(expected: "\(signatureVerificator.algorithm.name)", got: "\(alg)")
         }
          
         return nil
