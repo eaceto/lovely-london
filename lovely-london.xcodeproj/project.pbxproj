@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		3FBBC17C23367B02007423DD /* Claim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBBC17B23367B02007423DD /* Claim.swift */; };
 		3FDA14DB2335816D0005E4B2 /* IDTokenVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA14DA2335816D0005E4B2 /* IDTokenVerifier.swift */; };
 		3FDA14DF23358B820005E4B2 /* IDToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA14DE23358B820005E4B2 /* IDToken.swift */; };
 		3FDA14E123358C8A0005E4B2 /* IDTokenVerificationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA14E023358C8A0005E4B2 /* IDTokenVerificationError.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3FBBC17B23367B02007423DD /* Claim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Claim.swift; sourceTree = "<group>"; };
 		3FDA14DA2335816D0005E4B2 /* IDTokenVerifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDTokenVerifier.swift; sourceTree = "<group>"; };
 		3FDA14DE23358B820005E4B2 /* IDToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDToken.swift; sourceTree = "<group>"; };
 		3FDA14E023358C8A0005E4B2 /* IDTokenVerificationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDTokenVerificationError.swift; sourceTree = "<group>"; };
@@ -112,7 +114,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -122,7 +124,6 @@
 				OBJ_17 /* LICENSE */,
 				OBJ_18 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -142,6 +143,7 @@
 				3FDA14E223358CFF0005E4B2 /* SignatureVerificator.swift */,
 				3FDA14E423358D680005E4B2 /* SignatureAlgorithm.swift */,
 				3FDA14E82335A0F50005E4B2 /* String+Extensions.swift */,
+				3FBBC17B23367B02007423DD /* Claim.swift */,
 			);
 			name = "lovely-london";
 			path = "Sources/lovely-london";
@@ -219,7 +221,7 @@
 				English,
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -237,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				3FBBC17C23367B02007423DD /* Claim.swift in Sources */,
 				3FDA14DF23358B820005E4B2 /* IDToken.swift in Sources */,
 				3FDA14E323358CFF0005E4B2 /* SignatureVerificator.swift in Sources */,
 				3FDA14E123358C8A0005E4B2 /* IDTokenVerificationError.swift in Sources */,
