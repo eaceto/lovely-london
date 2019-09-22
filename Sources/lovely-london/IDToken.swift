@@ -7,6 +7,11 @@
 
 import Foundation
 
-public class IDToken: NSObject {
+public class IDToken {
 
+    private(set) var rawIDToken : String
+    
+    public init(raw: String) {
+        rawIDToken = raw
+    }
 }
