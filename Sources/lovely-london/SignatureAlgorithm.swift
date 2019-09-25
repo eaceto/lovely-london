@@ -14,7 +14,7 @@ public enum SignatureAlgorithm {
     case RS512
     case none
     
-    static func from(string: String) -> SignatureAlgorithm? {
+    public static func from(string: String) -> SignatureAlgorithm? {
         switch string {
         case "RS256":
             return .RS256
