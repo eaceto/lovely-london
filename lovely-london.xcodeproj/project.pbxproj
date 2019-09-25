@@ -21,28 +21,31 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		3FBBC17C23367B02007423DD /* Claim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBBC17B23367B02007423DD /* Claim.swift */; };
-		3FDA14DB2335816D0005E4B2 /* IDTokenVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA14DA2335816D0005E4B2 /* IDTokenVerifier.swift */; };
-		3FDA14DF23358B820005E4B2 /* IDToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA14DE23358B820005E4B2 /* IDToken.swift */; };
-		3FDA14E123358C8A0005E4B2 /* IDTokenVerificationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA14E023358C8A0005E4B2 /* IDTokenVerificationError.swift */; };
-		3FDA14E323358CFF0005E4B2 /* SignatureVerificator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA14E223358CFF0005E4B2 /* SignatureVerificator.swift */; };
-		3FDA14E523358D680005E4B2 /* SignatureAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA14E423358D680005E4B2 /* SignatureAlgorithm.swift */; };
-		3FDA14E92335A0F50005E4B2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA14E82335A0F50005E4B2 /* String+Extensions.swift */; };
+		3F1F23F0233A5FBC005FB516 /* IDToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F23E8233A5FBC005FB516 /* IDToken.swift */; };
+		3F1F23F1233A5FBC005FB516 /* SignatureAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F23E9233A5FBC005FB516 /* SignatureAlgorithm.swift */; };
+		3F1F23F2233A5FBC005FB516 /* IDTokenVerificationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F23EA233A5FBC005FB516 /* IDTokenVerificationError.swift */; };
+		3F1F23F3233A5FBC005FB516 /* IDTokenVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F23EB233A5FBC005FB516 /* IDTokenVerifier.swift */; };
+		3F1F23F4233A5FBC005FB516 /* RSAHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F23EC233A5FBC005FB516 /* RSAHelper.swift */; };
+		3F1F23F5233A5FBC005FB516 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F23ED233A5FBC005FB516 /* String+Base64.swift */; };
+		3F1F23F6233A5FBC005FB516 /* Claim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F23EE233A5FBC005FB516 /* Claim.swift */; };
+		3F1F23F7233A5FBC005FB516 /* SignatureVerificator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F23EF233A5FBC005FB516 /* SignatureVerificator.swift */; };
+		3F97AC34233AC04800592FB2 /* String+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F97AC32233AC04800592FB2 /* String+JSON.swift */; };
+		3F97AC35233AC04800592FB2 /* String+Digest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F97AC33233AC04800592FB2 /* String+Digest.swift */; };
 		OBJ_31 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_42 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* XCTestManifests.swift */; };
-		OBJ_43 /* lovely_londonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* lovely_londonTests.swift */; };
+		OBJ_42 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* XCTestManifests.swift */; };
+		OBJ_43 /* lovely_londonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* lovely_londonTests.swift */; };
 		OBJ_45 /* lovely_london.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "lovely-london::lovely-london::Product" /* lovely_london.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3FDA14D8233580980005E4B2 /* PBXContainerItemProxy */ = {
+		3F1F23E6233A5F82005FB516 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "lovely-london::lovely-london";
 			remoteInfo = "lovely-london";
 		};
-		3FDA14D9233580990005E4B2 /* PBXContainerItemProxy */ = {
+		3F1F23E7233A5F84005FB516 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -52,18 +55,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3FBBC17B23367B02007423DD /* Claim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Claim.swift; sourceTree = "<group>"; };
-		3FDA14DA2335816D0005E4B2 /* IDTokenVerifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDTokenVerifier.swift; sourceTree = "<group>"; };
-		3FDA14DE23358B820005E4B2 /* IDToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDToken.swift; sourceTree = "<group>"; };
-		3FDA14E023358C8A0005E4B2 /* IDTokenVerificationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDTokenVerificationError.swift; sourceTree = "<group>"; };
-		3FDA14E223358CFF0005E4B2 /* SignatureVerificator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureVerificator.swift; sourceTree = "<group>"; };
-		3FDA14E423358D680005E4B2 /* SignatureAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureAlgorithm.swift; sourceTree = "<group>"; };
-		3FDA14E82335A0F50005E4B2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		OBJ_12 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
-		OBJ_13 /* lovely_londonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lovely_londonTests.swift; sourceTree = "<group>"; };
-		OBJ_17 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		OBJ_18 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3F1F23E8233A5FBC005FB516 /* IDToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDToken.swift; sourceTree = "<group>"; };
+		3F1F23E9233A5FBC005FB516 /* SignatureAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureAlgorithm.swift; sourceTree = "<group>"; };
+		3F1F23EA233A5FBC005FB516 /* IDTokenVerificationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDTokenVerificationError.swift; sourceTree = "<group>"; };
+		3F1F23EB233A5FBC005FB516 /* IDTokenVerifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDTokenVerifier.swift; sourceTree = "<group>"; };
+		3F1F23EC233A5FBC005FB516 /* RSAHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAHelper.swift; sourceTree = "<group>"; };
+		3F1F23ED233A5FBC005FB516 /* String+Base64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
+		3F1F23EE233A5FBC005FB516 /* Claim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Claim.swift; sourceTree = "<group>"; };
+		3F1F23EF233A5FBC005FB516 /* SignatureVerificator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureVerificator.swift; sourceTree = "<group>"; };
+		3F97AC32233AC04800592FB2 /* String+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+JSON.swift"; sourceTree = "<group>"; };
+		3F97AC33233AC04800592FB2 /* String+Digest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Digest.swift"; sourceTree = "<group>"; };
+		OBJ_14 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		OBJ_15 /* lovely_londonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lovely_londonTests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_8 /* ios.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = ios.xcconfig; path = Sources/ios.xcconfig; sourceTree = "<group>"; };
 		"lovely-london::lovely-london::Product" /* lovely_london.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = lovely_london.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"lovely-london::lovely-londonTests::Product" /* lovely-londonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = "lovely-londonTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,25 +92,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_10 /* Tests */ = {
+		OBJ_10 /* lovely-london */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_11 /* lovely-londonTests */,
+				3F1F23EE233A5FBC005FB516 /* Claim.swift */,
+				3F1F23E8233A5FBC005FB516 /* IDToken.swift */,
+				3F1F23EA233A5FBC005FB516 /* IDTokenVerificationError.swift */,
+				3F1F23EB233A5FBC005FB516 /* IDTokenVerifier.swift */,
+				3F1F23EC233A5FBC005FB516 /* RSAHelper.swift */,
+				3F1F23E9233A5FBC005FB516 /* SignatureAlgorithm.swift */,
+				3F1F23EF233A5FBC005FB516 /* SignatureVerificator.swift */,
+				3F1F23ED233A5FBC005FB516 /* String+Base64.swift */,
+				3F97AC33233AC04800592FB2 /* String+Digest.swift */,
+				3F97AC32233AC04800592FB2 /* String+JSON.swift */,
+			);
+			name = "lovely-london";
+			path = "Sources/lovely-london";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_12 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_13 /* lovely-londonTests */,
 			);
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_11 /* lovely-londonTests */ = {
+		OBJ_13 /* lovely-londonTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_12 /* XCTestManifests.swift */,
-				OBJ_13 /* lovely_londonTests.swift */,
+				OBJ_14 /* XCTestManifests.swift */,
+				OBJ_15 /* lovely_londonTests.swift */,
 			);
 			name = "lovely-londonTests";
 			path = "Tests/lovely-londonTests";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_14 /* Products */ = {
+		OBJ_16 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				"lovely-london::lovely-londonTests::Product" /* lovely-londonTests.xctest */,
@@ -118,35 +141,27 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
-				OBJ_7 /* Sources */,
-				OBJ_10 /* Tests */,
-				OBJ_14 /* Products */,
-				OBJ_17 /* LICENSE */,
-				OBJ_18 /* README.md */,
+				OBJ_7 /* Configs */,
+				OBJ_9 /* Sources */,
+				OBJ_12 /* Tests */,
+				OBJ_16 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		OBJ_7 /* Sources */ = {
+		OBJ_7 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_8 /* lovely-london */,
+				OBJ_8 /* ios.xcconfig */,
+			);
+			name = Configs;
+			sourceTree = "<group>";
+		};
+		OBJ_9 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_10 /* lovely-london */,
 			);
 			name = Sources;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_8 /* lovely-london */ = {
-			isa = PBXGroup;
-			children = (
-				3FDA14DA2335816D0005E4B2 /* IDTokenVerifier.swift */,
-				3FDA14DE23358B820005E4B2 /* IDToken.swift */,
-				3FDA14E023358C8A0005E4B2 /* IDTokenVerificationError.swift */,
-				3FDA14E223358CFF0005E4B2 /* SignatureVerificator.swift */,
-				3FDA14E423358D680005E4B2 /* SignatureAlgorithm.swift */,
-				3FDA14E82335A0F50005E4B2 /* String+Extensions.swift */,
-				3FBBC17B23367B02007423DD /* Claim.swift */,
-			);
-			name = "lovely-london";
-			path = "Sources/lovely-london";
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -209,7 +224,7 @@
 				LastUpgradeCheck = 9999;
 				TargetAttributes = {
 					"lovely-london::lovely-london" = {
-						LastSwiftMigration = 1030;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -222,7 +237,7 @@
 				en,
 			);
 			mainGroup = OBJ_5;
-			productRefGroup = OBJ_14 /* Products */;
+			productRefGroup = OBJ_16 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -239,13 +254,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				3FBBC17C23367B02007423DD /* Claim.swift in Sources */,
-				3FDA14DF23358B820005E4B2 /* IDToken.swift in Sources */,
-				3FDA14E323358CFF0005E4B2 /* SignatureVerificator.swift in Sources */,
-				3FDA14E123358C8A0005E4B2 /* IDTokenVerificationError.swift in Sources */,
-				3FDA14E523358D680005E4B2 /* SignatureAlgorithm.swift in Sources */,
-				3FDA14E92335A0F50005E4B2 /* String+Extensions.swift in Sources */,
-				3FDA14DB2335816D0005E4B2 /* IDTokenVerifier.swift in Sources */,
+				3F97AC35233AC04800592FB2 /* String+Digest.swift in Sources */,
+				3F1F23F6233A5FBC005FB516 /* Claim.swift in Sources */,
+				3F1F23F1233A5FBC005FB516 /* SignatureAlgorithm.swift in Sources */,
+				3F1F23F2233A5FBC005FB516 /* IDTokenVerificationError.swift in Sources */,
+				3F1F23F3233A5FBC005FB516 /* IDTokenVerifier.swift in Sources */,
+				3F1F23F0233A5FBC005FB516 /* IDToken.swift in Sources */,
+				3F97AC34233AC04800592FB2 /* String+JSON.swift in Sources */,
+				3F1F23F7233A5FBC005FB516 /* SignatureVerificator.swift in Sources */,
+				3F1F23F5233A5FBC005FB516 /* String+Base64.swift in Sources */,
+				3F1F23F4233A5FBC005FB516 /* RSAHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,18 +290,19 @@
 		OBJ_36 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "lovely-london::lovely-londonTests" /* lovely-londonTests */;
-			targetProxy = 3FDA14D9233580990005E4B2 /* PBXContainerItemProxy */;
+			targetProxy = 3F1F23E7233A5F84005FB516 /* PBXContainerItemProxy */;
 		};
 		OBJ_46 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "lovely-london::lovely-london" /* lovely-london */;
-			targetProxy = 3FDA14D8233580980005E4B2 /* PBXContainerItemProxy */;
+			targetProxy = 3F1F23E6233A5F82005FB516 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		OBJ_21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = OBJ_8 /* ios.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -315,6 +334,7 @@
 		};
 		OBJ_22 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = OBJ_8 /* ios.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -376,6 +396,7 @@
 					"SWIFT_PACKAGE=1",
 					"DEBUG=1",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DXcode";
@@ -402,6 +423,7 @@
 		};
 		OBJ_39 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = OBJ_8 /* ios.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -439,6 +461,7 @@
 					"$(inherited)",
 					"SWIFT_PACKAGE=1",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -452,6 +475,7 @@
 		};
 		OBJ_40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = OBJ_8 /* ios.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;

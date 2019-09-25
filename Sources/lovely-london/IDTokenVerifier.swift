@@ -21,8 +21,8 @@ public class IDTokenVerifier {
         return claims
     }()
     
-    public func set(signatureAlgorithm: SignatureAlgorithm) -> IDTokenVerifier {
-        signatureVerificator = SignatureVerificator(with: signatureAlgorithm)
+    public func set(signatureAlgorithm: SignatureAlgorithm, and publicKey: String?) -> IDTokenVerifier {
+        signatureVerificator = SignatureVerificator(with: signatureAlgorithm, publicKey: publicKey)
         return self
     }
     
@@ -55,41 +55,53 @@ public class IDTokenVerifier {
             return
         }
         
+        // Validate Header
         guard let header = tokenParts[0].base64URLDecoded() else {
             let error = IDTokenVerificationError.invalidIDTokenFormat(message: "Invalid ID Token header. Could not decode from Base64URL")
             onError?(error)
             return
         }
-
-        if let headerError = validate(header: header) {
+        guard let headerJSON = header.asJSONObject() else {
+            onError?(IDTokenVerificationError.invalidIDTokenFormat(message: "Expected a JSON as header, got \(header)."))
+            return
+        }
+        if let headerError = validate(header: header, with: headerJSON) {
             onError?(headerError)
             return
         }
 
+        // Validate Payload.
         guard let payload = tokenParts[1].base64URLDecoded() else {
             let error = IDTokenVerificationError.invalidIDTokenFormat(message: "Invalid ID Token payload. Could not decode from Base64URL")
             onError?(error)
             return
         }
-        
-        if let payloadError = validate(payload: payload) {
+        guard let payloadJSON = payload.asJSONObject() else {
+            onError?(IDTokenVerificationError.invalidIDTokenFormat(message: "Expected a JSON as payload, got \(payload)."))
+            return
+        }
+        if let payloadError = validate(payload: payload, with: payloadJSON) {
             onError?(payloadError)
             return
         }
+        
+        // Validate Signature
+        guard case SignatureAlgorithm.none = signatureVerificator.algorithm else {
+            let tokenSignature = tokenParts[2].base64FromBase64URL()
+            if let signatureError = signatureVerificator.verify(header: tokenParts[0], and: tokenParts[1], with: tokenSignature) {
+                onError?(signatureError)
+            }
+            return
+        }
               
-        onSuccess?(IDToken(raw: idToken))
-        return
+        onSuccess?(IDToken(raw: idToken, header: headerJSON, payload: payloadJSON))
     }
 }
 
 // Header Verification
 extension IDTokenVerifier {
         
-    func validate(header: String) -> Error? {
-        guard let json = header.asJSONObject() else {
-            return IDTokenVerificationError.invalidIDTokenFormat(message: "Expected a JSON as header, got \(header).")
-        }
-
+    func validate(header: String, with json: [String:Any]) -> Error? {
         if case SignatureAlgorithm.none = signatureVerificator.algorithm {
             return nil
         }
@@ -110,11 +122,7 @@ extension IDTokenVerifier {
 // Payload Verification
 extension IDTokenVerifier {
     
-    func validate(payload: String) -> Error? {
-        guard let json = payload.asJSONObject() else {
-            return IDTokenVerificationError.invalidIDTokenFormat(message: "Expected a JSON as payload, got \(payload).")
-        }
-
+    func validate(payload: String, with json: [String:Any]) -> Error? {
         if let error = verifyIssuer(in: payload, with: json) {
             return error
         }

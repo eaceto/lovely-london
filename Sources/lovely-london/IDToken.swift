@@ -9,9 +9,13 @@ import Foundation
 
 public class IDToken {
 
-    private(set) var rawIDToken : String
+    private(set) var rawIDToken: String
+    private(set) var header: [String:Any]
+    private(set) var payload: [String:Any]
     
-    public init(raw: String) {
-        rawIDToken = raw
+    public init(raw: String, header: [String:Any], payload: [String:Any]) {
+        self.rawIDToken = raw
+        self.header = header
+        self.payload = payload
     }
 }
