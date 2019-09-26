@@ -20,17 +20,24 @@ enum SignatureVerificationError : Error {
 
 public class SignatureVerificator {
     
-    public static let none = SignatureVerificator(with: .none, publicKey: nil)
+    public static let none = SignatureVerificator(with: .none)
     
     private(set) var algorithm: SignatureAlgorithm
     private(set) var publicKey: SecKey?
+
     
-    
-    init(with algorithm: SignatureAlgorithm, publicKey pubKey: String?) {
+    public init(with algorithm: SignatureAlgorithm) {
         self.algorithm = algorithm
-        if let pubKey = pubKey {
-            self.publicKey = RSAHelper.publicKey(from: pubKey)
-        }
+    }
+        
+    public init(with algorithm: SignatureAlgorithm, publicKey pubKey: String) {
+        self.algorithm = algorithm
+        self.publicKey = RSAHelper.publicKey(from: pubKey)
+    }
+    
+    public init(with algorithm: SignatureAlgorithm, secKey: SecKey) {
+        self.algorithm = algorithm
+        self.publicKey = secKey
     }
     
     func verify(header: String, and payload: String, with tokenSignature: String) -> Error? {

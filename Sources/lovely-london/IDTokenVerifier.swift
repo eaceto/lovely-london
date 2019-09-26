@@ -12,6 +12,8 @@ public class IDTokenVerifier {
     private(set) var signatureVerificator = SignatureVerificator.none
     private(set) var leeway : TimeInterval = 0.0
     
+    public init() {}
+    
     private var requiredClaims : [String:Claim] = {
         var claims = [String:Claim]()
         
@@ -20,9 +22,19 @@ public class IDTokenVerifier {
         
         return claims
     }()
-    
-    public func set(signatureAlgorithm: SignatureAlgorithm, and publicKey: String?) -> IDTokenVerifier {
+
+    public func set(signatureAlgorithm: SignatureAlgorithm, and publicKey: String) -> IDTokenVerifier {
         signatureVerificator = SignatureVerificator(with: signatureAlgorithm, publicKey: publicKey)
+        return self
+    }
+    
+    public func set(signatureAlgorithm: SignatureAlgorithm, and secKey: SecKey) -> IDTokenVerifier {
+        signatureVerificator = SignatureVerificator(with: signatureAlgorithm, secKey: secKey)
+        return self
+    }
+    
+    public func set(signatureAlgorithm: SignatureAlgorithm) -> IDTokenVerifier {
+        signatureVerificator = SignatureVerificator(with: signatureAlgorithm)
         return self
     }
     
